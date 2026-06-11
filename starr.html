@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<title>My Projects & Involvements</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="index.html">Home</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		      <div class="navbar-nav">
+		        <a class="nav-link" href="#">Contact Barney</a>
+		        <a class="nav-link" href="#">More</a>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+    <h3>
+        Payload sub-team electronics
+    </h3>
+    <h5>
+        PWM signal integrity: Buffer Board
+    </h5>
+    <p>Problem: Noisy PWM signals from payload motherboard affecting servo and motor performance. <br>
+        Solution: Designed a dedicated buffer board with <a href="https://www.onsemi.com/download/data-sheet/pdf/nc7wz16-d.pdf" style="text-decoration: none; color: blue;">NC7WZ16</a> to filter signals before they reach the motors and servos<br>
+        <br>--My Role--<br>
+        - Schematic design in Altium Designer <br>
+        - Component selection <br>
+            <span style="margin-left: 40px; display: inline-block;">- NC7WZ16 is cheaper and easier to use (push-pull) </span><br>
+        - PCB layout for signal integrity and manufacturability while considering space limitations <br>
+        <br>--Design Considerations--<br>
+        - Power for chip<br>
+        - Power for servo/motors also have to go through the board<br>
+        - Output pins must provide GND, filtered signal, and power for motor/servos<br>
+    </p>
+    </body>
