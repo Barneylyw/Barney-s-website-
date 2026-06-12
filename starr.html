@@ -25,18 +25,39 @@
         Payload sub-team electronics
     </h3>
     <h5>
-        PWM signal integrity: Buffer Board
+        PWM Signal Integrity: Buffer Board
     </h5>
-    <p>Problem: Noisy PWM signals from payload motherboard affecting servo and motor performance. <br>
+    <p>Problem: Noisy PWM signals from payload motherboard affecting servo and motor performance <br>
         Solution: Designed a dedicated buffer board with <a href="https://www.onsemi.com/download/data-sheet/pdf/nc7wz16-d.pdf" style="text-decoration: none; color: blue;">NC7WZ16</a> to filter signals before they reach the motors and servos<br>
         <br>--My Role--<br>
         - Schematic design in Altium Designer <br>
         - Component selection <br>
             <span style="margin-left: 40px; display: inline-block;">- NC7WZ16 is cheaper and easier to use (push-pull) </span><br>
         - PCB layout for signal integrity and manufacturability while considering space limitations <br>
+        - Update PCB design according to updates in power distribution board <br>
         <br>--Design Considerations--<br>
         - Power for chip<br>
         - Power for servo/motors also have to go through the board<br>
         - Output pins must provide GND, filtered signal, and power for motor/servos<br>
     </p>
+    <h5>
+        Connector Board
+    </h5>
+    <p>Problem: Data buses also gets noisy, affecting data sent to motherboard <br>
+        Solution: Designed a dedicated connector and buffer board with <a href="https://www.ti.com/lit/ds/symlink/sn74lvc126a-q1.pdf?ts=1781187287241&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FSN74LVC126A-Q1%252Fpart-details%252FSN74LVC126AWBQARQ1" style="text-decoration: none; color: blue;">SN74LVC126A</a> and <a href="https://www.ti.com/lit/ds/symlink/tca4307.pdf?ts=17811418250811" style="text-decoration: none; color: blue;">TCA4307</a> to filter signals before they reach the motors and servos<br>
+        <br>--My Role--<br>
+        - Schematic design in Altium Designer <br>
+        - Component selection <br>
+            <span style="margin-left: 40px; display: inline-block;">- TCA4307 for I2C as it can be hot-swapped, allowing room for error </span><br>
+            <span style="margin-left: 40px; display: inline-block;">- SN74LVC126A generic buffer for SPI</span><br>
+            <span style="margin-left: 40px; display: inline-block;">- Considered adding bi-directional buffers for UART, but did not due to the added complexity needed from the motherboard</span><br>
+        - PCB layout for signal integrity and manufacturability while minimizing boardsize <br>
+        <br>--Design Considerations--<br>
+        - Power for chip<br>
+        - Output pins must provide GND, filtered signal, and ease of integration with existing systems<br>
+    </p>
+    <div class="bg-image">
+		<img class="img-fluid" src="image/boards.jpg" style="max-width: 50%; height: auto;">
+	</div>
+    <p>Image 1: unsoldered boards after manufacturing, Connector Board on the left, buffer board on the right</p>
     </body>
