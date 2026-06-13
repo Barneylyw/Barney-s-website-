@@ -3,7 +3,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="main.css">
-		<title>My Projects & Involvements</title>
+		<title>My Project: Bike Auxiliary System</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	</head>
 	<body>
@@ -15,10 +15,66 @@
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		      <div class="navbar-nav">
-		        <a class="nav-link" href="#">Contact Barney</a>
+		        <a class="nav-link" href="page1.html">Contact Barney</a>
 		        <a class="nav-link" href="#">More</a>
 		      </div>
 		    </div>
 		  </div>
 		</nav>
+	<h3>
+		Bike Auxiliary System
+	</h3>
+	<p>
+		To power a buzzer, head lights, and tail lights with one (or more) rechargeable Li-ion battery.<br>
+		Where the buzzer will act as a bell which will be activated by a button. The head lights and tail lights will be activated with one switch.<br>
+		--Overall design Considerations--<br>
+		<span style="margin-left: 40px; display: inline-block;">- as small as possible<br>
+		- minimize the number of re-order PCBs due to non-design related issues <br>(eg: jst-xh pins is easier to connect, but I had 1" header pins on this board, guess I gotta re-order the pcb with jst pins)
+		</span>
+		<br>
+		(All blue texts are links to component datasheet)
+	</p>
+	<h5>
+		Buzzer Sub-system
+	</h5>
+	<p>
+		Problem: My standard bike bell cannot be rung with gloves in the winter<br>
+		Solution: Make a 'bell' that can be activated with a button<br>
+		Buzzer used: <a href="https://puiaudio.com/file/specs-AI-3035-TWT-3V-R.pdf" style="text-decoration: none; color: blue;">AI-3035-TWT-3V-R</a><br>
+		<span style="margin-left: 40px; display: inline-block;">- resonance frequency (3500+-500Hz) and sound pressure level (100dB at 10cm) is similar to that of a typical bike bell<br>
+		- continuous tone, more control from the user<br>
+		- through hole, easier to test and solder</span><br>
+		To achieve the desired 4000Hz, <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ltc6990.pdf" style="text-decoration: none; color: blue;">LTC6990</a> is used to set the output frequency (div code = 7). The <a href="https://beta-tools.analog.com/timerblox/LTC6990#" style="text-decoration: none; color: blue;">LTC6990 online tool</a> is used to help determine the value of resistance needed to set the frequency to 4kHz<br>
+		The plan:  First simulate the design in LTspice to ensure the resistance setting will achieve 4kHz, then design the PCB board with Altium Designer<br>
+	</p>
+	<div class="bg-image">
+		<img class="img-fluid" src="image/LTC6990 in LTspice.png" style="max-width: 50%; height: auto;">
+	</div>
+    <p>Image 1: LTC6990 being simulated in LTspice, with the output frequency of 4kHz at a 3V output when the input is a 3VDC supply<br>
+		After confirming the design will achieve 4kHz output, I used Altium Designer to design the schematic layout, then designed the PCB layout for the board <br>
+	</p>
+	<div class="bg-image">
+		<img class="img-fluid" src="image/Buzzer Board schematic.png" style="max-width: 50%; height: auto;">
+	</div>
+	<p>
+		Image 2: Buzzer board schematic with the resistance value simulated in LTspice and 3V3 input and output both with <a href="https://www.digikey.ca/en/products/detail/jst-sales-america-inc/B2B-XH-A/1651045" style="text-decoration: none; color: blue;">B2B-XH-A</a> 2-pin headers
+	</p>
+	<div class="bg-image">
+		<img class="img-fluid" src="image/Buzzer Board layout.png" style="max-width: 50%; height: auto;">
+	</div>
+	<p>
+		Image 3: Buzzer board PCB layout viewed from top layer with components from schematic and I/O ports labeled
+	
+	<br>--Specific Design Considerations--<br>
+		<span style="margin-left: 40px; display: inline-block;">- N/A</span>
+	</p></p>
+	<h5>
+		Head Light Sub-system
+	</h5>
+	<h5>
+		Tail Light Sub-system
+	</h5>
+	<h5>
+		Power Distribution Sub-system
+	</h5>
     </body>
