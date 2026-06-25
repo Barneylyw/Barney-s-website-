@@ -6,30 +6,170 @@
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<title>Contact Barney</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<style>
+			body {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+			}
+
+			.navbar {
+				background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			}
+
+			.navbar-brand, .nav-link {
+				color: white !important;
+				font-weight: 500;
+			}
+
+			.nav-link:hover {
+				color: #ffd700 !important;
+			}
+
+			.navbar-toggler {
+				border: 1px solid rgba(255, 255, 255, 0.5) !important;
+				padding: 0.25rem 0.75rem;
+			}
+
+			.navbar-toggler-icon {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+			}
+
+			.content-wrapper {
+				background: rgba(255, 255, 255, 0.95);
+				border-radius: 15px;
+				padding: 40px;
+				margin: 30px auto;
+				max-width: 900px;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+			}
+
+			h1 {
+				color: #667eea;
+				font-weight: bold;
+				margin-bottom: 25px;
+				font-size: 2rem;
+			}
+
+			h2 {
+				color: #764ba2;
+				font-weight: bold;
+				margin-top: 30px;
+				margin-bottom: 15px;
+				padding-bottom: 8px;
+				border-bottom: 2px solid #667eea;
+			}
+
+			p {
+				color: #555;
+				line-height: 1.8;
+				font-size: 1rem;
+				margin-bottom: 15px;
+			}
+
+			a {
+				color: #667eea;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			a:hover {
+				color: #764ba2;
+			}
+
+			.contact-card {
+				background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+				border-radius: 10px;
+				padding: 30px;
+				margin-top: 30px;
+				box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+			}
+
+			.contact-item {
+				margin: 15px 0;
+				font-size: 1.1rem;
+				display: flex;
+				align-items: center;
+			}
+
+			.contact-icon {
+				font-size: 1.5rem;
+				margin-right: 15px;
+				min-width: 30px;
+			}
+
+			.contact-label {
+				color: #764ba2;
+				font-weight: bold;
+				margin-right: 10px;
+			}
+
+			.opportunity-box {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				border-radius: 10px;
+				padding: 20px;
+				margin: 25px 0;
+				box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+			}
+
+			.opportunity-box h3 {
+				color: white;
+				margin-bottom: 10px;
+			}
+
+			.opportunity-box p {
+				color: rgba(255, 255, 255, 0.95);
+			}
+		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="index.html">Home</a>
+		    <a class="navbar-brand" href="index.html">🚀 Home</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		      <div class="navbar-nav">
-		        <a class="nav-link" href="#">Contact me</a>
+		        <a class="nav-link" href="page1.html">Contact</a>
 		        <a class="nav-link" href="#">More</a>
 		      </div>
 		    </div>
 		  </div>
 		</nav>
-		<h1>
-			Contact information
-		</h1>
-		<p>You can contact me by <a href="https://www.linkedin.com/in/barney-wong-803b202aa" style="text-decoration: none; color: blue;">Linkedin</a> or  Email, barneylokyin@gmail.com (preferred)</p>
-		<!--
-		<div class="bg-image">
-			<img class="img-fluid" src="image/barney green yellow.jpg">
+
+		<div class="content-wrapper">
+			<h1>📧 Let's Connect</h1>
+			
+			<p>I'm actively seeking a <strong>summer internship</strong> where I can contribute my PCB design and hardware engineering skills. I'm particularly interested in roles involving signal integrity or power distribution.</p>
+
+			<div class="opportunity-box">
+				<h3>🎯 What I'm Looking For</h3>
+				<p>A <strong>summer internship</strong> where I can work on hardware design projects and apply my Altium Designer and LTspice knowledge. I'm comfortable and interested in working in <strong>industrial environments</strong>, and I'm eager to learn from experienced engineers while contributing to meaningful projects in electronics, power systems, or rocketry-related fields.</p>
+			</div>
+
+			<h2>Contact Information</h2>
+			<div class="contact-card">
+				<div class="contact-item">
+					<span class="contact-icon">📧</span>
+					<div>
+						<span class="contact-label">Email:</span>
+						<a href="mailto:barneylokyin@gmail.com">barneylokyin@gmail.com</a> <em>(preferred)</em>
+					</div>
+				</div>
+				<div class="contact-item">
+					<span class="contact-icon">💼</span>
+					<div>
+						<span class="contact-label">LinkedIn:</span>
+						<a href="https://www.linkedin.com/in/barney-wong-803b202aa">linkedin.com/in/barney-wong-803b202aa</a>
+					</div>
+				</div>
+			</div>
+
+			<p style="margin-top: 30px; text-align: center; font-style: italic; color: #999;">Feel free to reach out with any project ideas, internship opportunities, or just to chat about rocketry and electronics!</p>
 		</div>
-		-->
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP28lgoAoJAH+22JNfQTH5IvA8qZZb" crossorigin="anonymous"></script>
 	</body>
 </html>
