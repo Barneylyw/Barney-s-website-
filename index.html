@@ -119,16 +119,46 @@
 				color: #555;
 				line-height: 1.8;
 			}
+
+			.wip-banner {
+				background: linear-gradient(90deg, #FFC107 0%, #FF9800 100%);
+				color: #333;
+				padding: 15px 20px;
+				text-align: center;
+				font-weight: 500;
+				border-bottom: 2px solid #FF6F00;
+				margin-bottom: 20px;
+			}
+
+			.status-badge {
+				display: inline-block;
+				padding: 6px 12px;
+				border-radius: 20px;
+				font-size: 0.85rem;
+				font-weight: 600;
+				margin-top: 10px;
+				margin-right: 8px;
+			}
+
+			.status-completed {
+				background-color: #4CAF50;
+				color: white;
+			}
+
+			.status-inprogress {
+				background-color: #FF9800;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="wip-banner">
-			⚠️ Work in Progress - This portfolio is actively being updated and will be updated periodically
+			Work in Progress - This portfolio is actively being updated and will be updated periodically
 		</div>
 
 		<nav class="navbar navbar-expand-md navbar-light">
 		  <div class="container-fluid">
-		    <a class="navbar-brand" href="#">Home</a>
+		    <a class="navbar-brand" href="#">🚀 Home</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -192,8 +222,7 @@
 						<div class="card-body">
 							<h5 class="card-title">Weather Balloon Project</h5>
 							<span class="status-badge status-completed">Completed</span>
-							<p class="card-text">Designed an Arduino system to collect atmospheric data to be launched to ~30km via a weather balloon<br>
-							link to WIP documentation GitHub page</p>
+							<p class="card-text">Designed an Arduino system to collect atmospheric data to be launched to ~30km via a weather balloon<br>This Documentation is a work in progress</p>
 						</div>
 					</div>
 				</a>
