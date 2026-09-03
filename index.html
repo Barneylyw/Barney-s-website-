@@ -24,6 +24,7 @@
 
 			.nav-link:hover {
 				color: #ffd700 !important;
+				text-decoration: underline;
 			}
 
 			.navbar-toggler {
@@ -145,15 +146,39 @@
 				color: white;
 			}
 
-			.status-inprogress {
-				background-color: #FF9800;
+			.github-badge {
+				display: inline-block;
+				padding: 4px 10px;
+				border-radius: 15px;
+				font-size: 0.75rem;
+				font-weight: 600;
+				background-color: #333;
+				color: white;
+				margin-left: 8px;
+			}
+
+			.github-link {
+				display: inline-block;
+				margin-top: 10px;
+				padding: 6px 12px;
+				background-color: #333;
+				color: white;
+				border-radius: 6px;
+				font-size: 0.9rem;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.github-link:hover {
+				background-color: #555;
+				text-decoration: none;
 				color: white;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="wip-banner">
-			Work in Progress - This portfolio is actively being updated and will be updated periodically
+			⚠️ Work in Progress - This portfolio is actively being updated and will be improved periodically
 		</div>
 
 		<nav class="navbar navbar-expand-md navbar-light">
@@ -208,19 +233,19 @@
 
 			<div class="section-wrapper">
 				<h2>Projects</h2>
-				<a href="https://github.com/Barneylyw/Bike-Aux" style="text-decoration: none; color: inherit;">
+				<a href="bike aux.html" style="text-decoration: none; color: inherit;">
 					<div class="card">	
 						<div class="card-body">
-							<h5 class="card-title">Bike Auxiliary System</h5>
+							<h5 class="card-title">Bike Auxiliary System<span class="github-badge">GitHub</span></h5>
 							<span class="status-badge status-inprogress">In Progress</span>
-							<p class="card-text">Designing an electronics system to power bike lights and a buzzer using a rechargeable Li-ion battery.</p>
+							<p class="card-text">Designing a complete electronics system to power bike lights and a buzzer using a rechargeable Li-ion battery. Demonstrates PCB design, and power management.</p>
 						</div>
 					</div>
 				</a>
-				<a href="https://github.com/Barneylyw/Weather-Balloon-Project" style="text-decoration: none; color: inherit;">
+				<a href="weather balloon.html" style="text-decoration: none; color: inherit;">
 					<div class="card">	
 						<div class="card-body">
-							<h5 class="card-title">Weather Balloon Project</h5>
+							<h5 class="card-title">Weather Balloon Project<span class="github-badge">GitHub</span></h5>
 							<span class="status-badge status-completed">Completed</span>
 							<p class="card-text">Designed an Arduino system to collect atmospheric data to be launched to ~30km via a weather balloon</p>
 						</div>
