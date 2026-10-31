@@ -151,6 +151,11 @@
 				color: white;
 			}
 
+			.status-paused {
+				background-color: #E53935;
+				color: white;
+			}
+
 			.github-badge {
 				display: inline-block;
 				padding: 4px 10px;
@@ -276,7 +281,24 @@
 				<p>This section focuses on what I did for the IMU sub-system, including the wiring between MPU6050 and ESP32, and the test code.</p>
 				<p>To design the IMU system, I first determined what pins are available on the ESP32, and specific breakout board. On the MPU6050, I found I only need to use its I2C and power pins, I figured that I2C on the module would go to I2C on the ESP32, and the power pins would go to the VDD and GND of the system.</p>
 				<p>In order to confirm my wiring, I used an online guide and datasheet to verify my wiring. The guide used an Arduino Uno instead of an ESP32, but it showed the SDA and SCL pins on the module going to the SDA and SCL pins on the Arduino. I determined that my wiring is correct since both ESP32 and Arduino are microcontrollers and need data from I2C, and I wired the ESP32 the same way they wired the Arduino.</p>
-				<p>more documentation coming soon</p>
+				<p>Then I used the test code to test its functionality, I had the baud rate from Arduino IDE set incorrectly, so I wasn't getting any data. At the same time, Yojith already finished the code for the IMU to detect movement, so I handed it off to him.</p>
+			</div>
+
+			<div class="section-wrapper">
+				<h2>Indicator LEDs</h2>
+				<p>This section focuses on what me and Clark did to design and coded the indicator LEDs.</p>
+				<p>We need two LEDs, one to indicate engine running and the other to indicate system running. Engine running indicator needs to be turned on via a button and off when the system tells it to shut the car off. System running indicator turns on when the car (engine) turns on and off when the IdleGuard system is off.</p>
+				<p>Since we learned how to design this exact system (lighting up LEDs with an MCU) in our class (ECE 312) so we were confident in my ability to complete this part. I looked up the correct syntax to use in Arduino IDE for an ESP32 (it turns out to be easier than MPLab IDE) while Clark was calculating the resistance for the current limiting resistor. He found that a 220&nbsp;Ω resistor will be able to limit the current through the LEDs to ~90% of the rated current while considering for 5% resistor error.</p>
+				<p>For the initial design, I first wired up the ‘engine on’ LED to verify it works, then expanded it to the two LEDs that we would use in our prototype. In the Arduino code (which is way easier than MPLab, also kind of weird because it's too easy), I first defined which pin is connected to the input button, the output LED, and disabled the input pullup resistor as the button is connected to the voltage source. Then in the while-loop, it continually checks if the input pin is high, if so, it will turn on the LED.</p>
+				<p>My initial code had an issue where the LED will not turn on, turns out I did not wire the pushbutton correctly, it was wired the wrong way. The test system worked after I fixed the wiring. We also had an issue with debouncing, where the LED will not turn on if I released the button too soon, we theorized that the high frequency that was generated from the mechanical button was messing with the MCU reading the pin logic level. Although it's a relatively easy fix by adding a low pass filter, we decided to press longer to turn on the ‘engine on’ indicator LED as it is just meant to be an indicator in the prototype.</p>
+				<p>I then sent the code to Yojith and Amitoj for them to integrate into the rest of the system and added another similar code for the ‘system running’ LED.</p>
+				<p>More documentation coming soon</p>
+			</div>
+
+			<div class="section-wrapper">
+				<h2>Demo</h2>
+				<p>Full demo video of the prototype:</p>
+				<a href="https://youtu.be/QY-_GydyjAU?si=KCT43-WPaU3zIU0l" target="_blank" rel="noopener" class="github-link">Watch on YouTube</a>
 			</div>
 		</div>
 
