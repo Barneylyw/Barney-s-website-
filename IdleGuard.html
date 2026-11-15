@@ -212,6 +212,7 @@
 			<div class="section-wrapper">
 				<h2>Overall Design</h2>
 				<p>This section will give a rough outline of how we designed the system in (mostly) chronological order.</p>
+				<p>We wanted the system to be backwards compatible, meaning it could be implemented on any vehicle without relying on existing sensors already on board. So our system needed to carry all the sensors it needed itself.</p>
 				<p>To design such a system, we first defined what sensors we need to sense the temperature, the motion, and sending notification to the phone, then we decided on where to put them within a vehicle. Our initial idea was to use a tilt sensor from the provided Arduino starter kit as the motion sensing mechanism by hanging the sensor on a pendulum, once it moves, that means the car have moved. But we realized an IMU would be more reliable and easier to implement in a real vehicle, so we pivoted to using my teammate’s IMU unit (MPU6050). I was in charge of this sub-project.</p>
 				<p>Then we discussed how we will detect if the engine is on, we thought of using a vibration sensor mounted on/near the engine block to detect its vibration and check if it’s running, this task was assigned to my teammate Yojith.</p>
 				<p>We unanimously agreed to mount the temperature sensor under the oil pan to detect if the car is warmed op enough to drive, my teammate Clark took up this part of the project.</p>
@@ -292,13 +293,24 @@
 				<p>For the initial design, I first wired up the ‘engine on’ LED to verify it works, then expanded it to the two LEDs that we would use in our prototype. In the Arduino code (which is way easier than MPLab, also kind of weird because it's too easy), I first defined which pin is connected to the input button, the output LED, and disabled the input pullup resistor as the button is connected to the voltage source. Then in the while-loop, it continually checks if the input pin is high, if so, it will turn on the LED.</p>
 				<p>My initial code had an issue where the LED will not turn on, turns out I did not wire the pushbutton correctly, it was wired the wrong way. The test system worked after I fixed the wiring. We also had an issue with debouncing, where the LED will not turn on if I released the button too soon, we theorized that the high frequency that was generated from the mechanical button was messing with the MCU reading the pin logic level. Although it's a relatively easy fix by adding a low pass filter, we decided to press longer to turn on the ‘engine on’ indicator LED as it is just meant to be an indicator in the prototype.</p>
 				<p>I then sent the code to Yojith and Amitoj for them to integrate into the rest of the system and added another similar code for the ‘system running’ LED.</p>
-				<p>More documentation coming soon</p>
+				<p>We then repeatedly tested the system in different scenarios and fine-tuned the logic and output messages, and presented it to the judges when time was up.</p>
 			</div>
 
 			<div class="section-wrapper">
-				<h2>Demo</h2>
-				<p>Full demo video of the prototype:</p>
+				<h2>Outcome</h2>
+				<p>Demo video we prepared for the judges:</p>
 				<a href="https://youtu.be/QY-_GydyjAU?si=KCT43-WPaU3zIU0l" target="_blank" rel="noopener" class="github-link">Watch on YouTube</a>
+				<p style="margin-top: 15px;">The judges preferred a live demo, so we did that instead. They asked whether there were existing sensors we could've tapped into to achieve the same system, and where we'd be sourcing power from. We answered with the same reasoning as our original design: backwards compatibility, and power from the alternator through a voltage regulator.</p>
+				<p>We scored 20/24 points and placed 8th out of 13 teams.</p>
+			</div>
+
+			<div class="section-wrapper">
+				<h2>Lessons Learned</h2>
+				<ul>
+					<li>It's really fun to work on a project like this — I'd be down to do another hackathon in the future.</li>
+					<li>Different people work differently; some people like to use AI more than others, and I've had to accept that.</li>
+					<li>We spent too much time discussing the fine details of the system early in the competition, because we were too focused on building a "complete system" with the parts we had. I would've liked to build an actual buck converter as the voltage input and have the Analog Discovery 2 supply ~13V (like an alternator) and watch it regulate down to ~5V.</li>
+				</ul>
 			</div>
 		</div>
 
